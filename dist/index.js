@@ -54,3 +54,28 @@ const user1 = {
 };
 const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
+// classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered.`;
+    }
+}
+const alex = new Person(1, 'Alex Ghiurau');
+// subclass
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(2, 'Bob', 'Dev');
+// Generics, placeholder of type
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['alex', 'john', 'jill']);
